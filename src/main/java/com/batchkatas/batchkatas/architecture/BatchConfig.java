@@ -1,5 +1,6 @@
 package com.batchkatas.batchkatas.architecture;
 
+
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.StepContribution;
@@ -26,6 +27,9 @@ public class BatchConfig {
 	@Autowired
 	private HelloWorldExecutionListener helloWorldExecutionListener;
 
+	@Autowired
+	private HelloWorldStepListener helloWorldStepListener;
+
 	@Bean
 	public Job testJob(){
 		return jobBuilder.get( "testJob" )
@@ -37,6 +41,7 @@ public class BatchConfig {
 	@Bean
 	public Step testStep(){
 		return stepBuilder.get( "testStep" )
+				.listener( helloWorldStepListener )
 				.tasklet( new Tasklet() {
 					@Override
 					public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext)
