@@ -1,4 +1,4 @@
-package com.batchkatas.batchkatas.architecture;
+package com.batchkatas.batchkatas.helloworld;
 
 import org.springframework.batch.core.JobExecution;
 import org.springframework.batch.core.JobExecutionListener;
