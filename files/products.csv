@@ -1,0 +1,4 @@
+productId,productName,productDesc,price,unit
+1,'Apple','Apple cell phone',500.0,10
+2,'Dell','Dell computer',300.0,5
+3,'Office','Ms office software',196.0,23
