@@ -1,6 +1,7 @@
 package com.batchkatas.batchkatas.csv;
 
 
+import com.batchkatas.batchkatas.ItemConsoleItemWriter;
 import com.batchkatas.batchkatas.model.ProductDto;
 import com.batchkatas.batchkatas.model.SupplierDto;
 import org.springframework.batch.core.Step;
@@ -44,7 +45,7 @@ public class CsvBatchConfig {
 		return stepBuilderFactory.get( "csvProductSupplier" )
 				.chunk( 3 )
 				.reader( productSupplierReader() )
-				.writer( new ProductConsoleItemWriter() )
+				.writer( new ItemConsoleItemWriter() )
 				.build();
 	}
 
@@ -70,7 +71,7 @@ public class CsvBatchConfig {
 		return stepBuilderFactory.get( "csvProductStep" )
 				.chunk( 3 )
 				.reader(  productCsvReader())
-				.writer(  new ProductConsoleItemWriter())
+				.writer(  new ItemConsoleItemWriter())
 				.build();
 	}
 

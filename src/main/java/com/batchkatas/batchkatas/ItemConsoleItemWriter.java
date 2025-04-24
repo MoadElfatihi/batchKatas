@@ -1,11 +1,10 @@
-package com.batchkatas.batchkatas.csv;
+package com.batchkatas.batchkatas;
 
 import java.util.List;
 
-import com.batchkatas.batchkatas.model.ProductDto;
 import org.springframework.batch.item.support.AbstractItemStreamItemWriter;
 
-public class ProductConsoleItemWriter extends AbstractItemStreamItemWriter<Object> {
+public class ItemConsoleItemWriter extends AbstractItemStreamItemWriter<Object> {
 
 	@Override
 	public void write(List<?> list) throws Exception {
